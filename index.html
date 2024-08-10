@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es-ch">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 1 - ONE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="Assets/Titulo.png">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+        </div>
+        <h1 class="header_titulo">Encriptado y desencriptado de texto</h1>
+    </header>
+
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a href="Explicacion.html">Explicación desafío</a>
+                <a href="index.html">Solución</a>
+            </nav>
+
+            <section class="container-menu_links">
+                <a class="container-menu_links_contacto"  href="https://github.com/FernandaSalgadoU" target="_blank"><i id="icon" class="fa-brands fa-github" style="color: #c7c7c7;"></i></a>
+                <a class="container-menu_links_contacto"  href="https://www.linkedin.com/in/fernanda-salgado-ulloa" target="_blank"><i id="icon" class="fa-brands fa-linkedin" style="color: #c7c7c7;"></i></a>
+            </section>
+
+            <label for="btn-menu">✖️</label>
+        </div>
+    </div>
+
+    <main class="main">
+        <section class="main_entrada" id="main_entrada">
+            <textarea id="main_entrada_texto" class="main_entrada_texto" type="text" placeholder="Ingrese el texto aquí..." spellcheck="false"></textarea>
+            <p class="main_tentrada_advertencia"><i class="fa fa-exclamation-circle"></i> Sólo letras minúsculas, sin acentos y sin carácteres especiales</p>
+            <section class="main_entrada_botones">
+                <button class="main_entrada_boton_encriptar" onclick="boton_Encriptar()">Encriptar</button>
+                <button class="main_entrada_boton_desencriptar" onclick="boton_Desencriptar()">Desencriptar</button>
+                <button class="main_entrada_boton_refresh" onclick="boton_Resetear()">
+                    <i class="fa-solid fa-rotate"></i>
+                    Resetear</button>
+            </section>
+        </section>
+
+        <section class="main_salida" id="main_salida">
+            <textarea id="main_salida_texto" class="main_salida_texto" readonly type="text" spellcheck="false" ></textarea>
+            <section class="main_salida_botones">
+                <button class="main_salida_boton_copiar" onclick=boton_Copiar()>Copiar</button>
+            </section>
+        </section>
+
+        <section class="main_salida_sin_texto" id="main_salida_sin_texto">
+            <img class="main_salida_sin_texto_imagen" src="Assets/No_encontrado.jpg">
+            <section class="main_salida_sin_texto_mensaje">
+                <p1 class="main_salida_texto_principal">Ningún mensaje fue encontrado</p1>
+                <p class="main_salida_texto_secundario">Ingresa el texto que desees encriptar o desencriptar</p>
+            </section>
+        </section>
+
+        <section class="main_salida_copia" id="main_salida_copia">
+            <img class="main_salida_copia_imagen" src="Assets/Logrado.avif">
+            <section class="main_salida_copia_mensaje">
+                <p1 class="main_salida_texto_principal">Mensaje copiado con éxito</p1>
+            </section>
+            
+        </section>
+
+
+    </main>
+    <footer class="footer">
+    </footer>
+</body>
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>

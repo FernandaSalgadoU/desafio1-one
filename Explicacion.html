@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es-ch">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 1 - ONE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="Assets/Titulo.png">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+        </div>
+        <h1 class="header_titulo">Encriptado y desencriptado de texto</h1>
+    </header>
+
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a href="Explicacion.html">Explicación desafío</a>
+                <a href="index.html">Solución</a>
+            </nav>
+
+            <section class="container-menu_links">
+                <a class="container-menu_links_contacto" href="https://github.com/FernandaSalgadoU" target="_blank"><i id="icon" class="fa-brands fa-github" style="color: #c7c7c7;"></i></a>
+                <a class="container-menu_links_contacto" href="https://www.linkedin.com/in/fernanda-salgado-ulloa" target="_blank"><i id="icon" class="fa-brands fa-linkedin" style="color: #c7c7c7;"></i></a>
+            </section>
+
+            <label for="btn-menu">✖️</label>
+        </div>
+    </div>
+
+
+    <main class="main">
+        <section class="main_salida_sin_texto_mensaje">
+            <p1 class="main_salida_texto_principal_explicacion">En qué consiste el desafío</p1>
+            <p class="main_salida_texto_secundario_explicacion">
+                El desafío consiste en realizar un encriptado y desencriptado de texto considerando las siguientes condiciones:
+                <br><br>
+                a) El texto ingresado no debe tener minúsculas ni acentos.
+                <br> <br> 
+                b) Las "llaves" de encriptación utilizadas son las siguientes:
+                <br> <br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;- La letra "e" es convertida para "enter"
+                <br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;- La letra "i" es convertida para "imes"
+                <br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;- La letra "a" es convertida para "ai"
+                <br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;- La letra "o" es convertida para "ober"
+                <br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;- La letra "u" es convertida para "ufat"
+                <br> <br> 
+                c) Se debe tener la posibilidad de volver al estado original de la palabra.
+                <br> <br> 
+                d) El usuario debe poder encriptar o desencriptar un texto.
+                <br> <br> 
+                e) El resultado debe mostrarse en pantalla.
+                
+                <br> <br>
+            </p>    
+            <br><br>
+            <p1 class="main_salida_texto_principal_explicacion">Comentarios del desarrollador</p1>
+            <p class="main_salida_texto_secundario_explicacion">
+                Es importante mencionar que este proyecto fue desarrollado
+                gracias al conocimiento entregado por el programa ONE de Alura y Oracle. Además de la utilización
+                de distintos recursos encontrados en la web (como por ejemplo: el canal de youtube SLee Dw y Hilari Web).
+                De todas maneras, si requieren explicación de alguna parte del desarrollo, no tengo problemas con
+                compartir mi conocimiento. Eso sí, aún estoy iniciando en este proceso del desarrollo web.
+                <br> <br> 
+            </p>
+        </section>
+    </main>
+
+</body>
+<script src="app.js"></script>
+</html>
