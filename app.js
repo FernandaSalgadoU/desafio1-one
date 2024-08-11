@@ -1,26 +1,18 @@
-/*=0*/
 let palabra_Usuario = "";
 let palabra_Encriptada="";
 let palabra_Desencriptada="";
 let ventana_emergente_mensaje="";
 
-const ventana_emergente = document.getElementById('ventana_emergente');
-const cerrar = document.getElementById('cerrar');
-
 function condicion_Inicial(){
     palabra_Usuario=document.getElementById('main_entrada_texto').value;
-    /*palabra_Usuario = palabra_Usuario.toLowerCase();
-    palabra_Usuario=quitar_Tildes(palabra_Usuario);*/
-}
-
-function boton_cerrar(){
-    ventana_emergente.classList.remove('show');
+   /* palabra_Usuario = palabra_Usuario.toLowerCase();
+    palabra_Usuario=quitar_Tildes(palabra_Usuario);
+    palabra_Usuario=eliminarCaracteresEspeciales(palabra_Usuario);*/
 }
 
 function boton_Encriptar(){
     condicion_Inicial();
     palabra_Encriptada=encriptar_Texto(palabra_Usuario);
-    ventana_emergente_mensaje = document.getElementById('ventana_emergente_texto_interior_mensaje');
 
     if(palabra_Usuario.trim()===""){
         Swal.fire({
@@ -128,10 +120,15 @@ function boton_Resetear(){
     document.getElementById('main_salida_copia').style.display='none';
 }
 
-/*
-function quitar_Tildes(texto) {
+
+/*function quitar_Tildes(texto) {
     return texto.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
-}*/
+}
+
+function eliminarCaracteresEspeciales(texto) {
+    const regex = /[^a-zA-Z0-9]/g;
+    return texto.replace(regex, '');
+  }*/
 
 function verificar_Minusculas(texto){
     if( texto=== texto.toLowerCase()){
