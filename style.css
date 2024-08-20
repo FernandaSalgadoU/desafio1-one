@@ -44,7 +44,7 @@ body{
     font-family: var(--letra);
     text-align: center;
     padding:0.5%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     flex: 1;
     
 }
@@ -210,7 +210,7 @@ body{
     gap:1rem;
     border-radius: 5%;
     background-color: var(--color_fondo_texto);
-    margin:2% 0% 0% 0%;
+    margin:1% 0% 0% 0%;
 }
 
 
@@ -222,7 +222,7 @@ body{
     border-radius: 5%;
     background-color:var(--color_fondo_texto);
     box-shadow: var(--sombra);
-    margin:2% 0% 0% 0%;
+    margin:1% 0% 0% 0%;
 }
 
 .main_salida_sin_texto{
@@ -235,7 +235,7 @@ body{
     border-radius: 5%;
     background-color: var(--color_fondo_texto);
     box-shadow: var(--sombra);
-    margin:2% 0% 0% 0%;
+    margin:1% 0% 0% 0%;
 }
 
 
@@ -249,7 +249,7 @@ body{
     border-radius: 5%;
     background-color:var(--color_fondo_texto);
     box-shadow: var(--sombra);
-    margin:2% 0% 0% 0%;
+    margin:1% 0% 0% 0%;
 }
 
 
@@ -458,8 +458,7 @@ body{
     font-size:0.8rem;
     text-align: center;
     background-color: #0A3871;
-    margin:1% 0% 0% 0%;
-    padding:0.5% 0% 0.5% 0%;
+    margin:0.5% 0% 0% 0%;
 }
 
 .footer i{
