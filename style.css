@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *{
     padding: 0;
@@ -6,8 +6,21 @@
     box-sizing: border-box;
 }
 
-/*font-family: "Inter", sans-serif;*/
+#particles-js{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
 
+:root{
+    --sombra: 0px 2px 10px rgba(0,0,0,0.2);
+    --color_fondo_texto:rgb(231, 231, 231);
+    --color_texto:#495057;
+    --color_letras_claras:rgb(231, 231, 231);
+    --letra:"Poppins", sans-serif;
+    --color_tooltip:#a2a4a5;
+}
 
 body{
     background-image: url(https://images.unsplash.com/photo-1684994740683-841fb218e673?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
@@ -21,22 +34,28 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:#0A3871;
-    margin:0% 0% 1% 0%;
+    background-color: #0A3871;
     gap:15px;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+    box-shadow: var(--sombra);
 }
+
 .header_titulo{
-    color:white;
-    font-family: "Inter", sans-serif;
+    color:var(--color_letras_claras);
+    font-family: var(--letra);
     text-align: center;
     padding:0.5%;
     font-size: 2rem;
     flex: 1;
+    
+}
+
+.header_titulo .texto_titulo{
+    font-weight: bold;
+    font-style: normal;
 }
 
 .container .btn-menu label{
-    color: #fff;
+    color: var(--color_letras_claras);
     font-size: 25px;
     cursor: pointer;
     margin:0% 0% 0% 25%;
@@ -54,6 +73,7 @@ body{
     transition: all 500ms ease;
     opacity: 0;
     visibility: hidden;
+    z-index: 999;
 
     
 }
@@ -70,7 +90,7 @@ body{
     position: relative;
     transition: all 500ms ease;
     transform: translateX(-100%);
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
 }
 #btn-menu:checked ~ .container-menu .cont-menu{
     transform: translateX(0%);
@@ -94,7 +114,7 @@ body{
     position: absolute;
     right: 5px;
     top: 10px;
-    color: #fff;
+    color: var(--color_letras_claras);
     cursor: pointer;
     font-size: 18px;
 }
@@ -104,6 +124,7 @@ body{
     bottom: 2%;
     left: 50%;
     transform: translateX(-50%);
+    gap:5px;
 }
 
 .container-menu_links a{
@@ -111,16 +132,68 @@ body{
     display: inline-block;
 }
 
-.container-menu_links_contacto{
-    font-size: 30px;
+.tooltip-link {
+    position: relative;
+    display: inline-block;
 }
 
-.container-menu_links a:hover{
-    transform: scale(1.05);
+.tooltip-link::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%; 
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background-color: var(--color_tooltip);
+    color: #000;
+    padding: 5px 8px; 
+    border-radius: 6px;
+    white-space: nowrap; 
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+    z-index: 1000; 
+    text-align: center;
 }
+
+.tooltip-link:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px); 
+}
+
+.tooltip-link::before {
+    content: "";
+    position: absolute;
+    bottom: 100%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--color_tooltip) transparent transparent transparent;
+}
+
+.tooltip-link::before {
+    visibility: hidden;
+}
+
+.tooltip-link:hover::before {
+    visibility: visible;
+}
+
+.tooltip-link i {
+    color: #c7c7c7; 
+    font-size: 35px;
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.tooltip-link:hover i {
+    color: var(--color_tooltip); 
+    transform: scale(1.1); 
+}
+
 
 .swal-popup-custom{
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
 }
 
 .main{
@@ -136,7 +209,7 @@ body{
     width: 40%;
     gap:1rem;
     border-radius: 5%;
-    background-color: white;
+    background-color: var(--color_fondo_texto);
     margin:2% 0% 0% 0%;
 }
 
@@ -147,8 +220,8 @@ body{
     width: 25%;
     gap:1rem;
     border-radius: 5%;
-    background-color: white;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+    background-color:var(--color_fondo_texto);
+    box-shadow: var(--sombra);
     margin:2% 0% 0% 0%;
 }
 
@@ -160,8 +233,8 @@ body{
     width: 25%;
     gap:1rem;
     border-radius: 5%;
-    background-color: white;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+    background-color: var(--color_fondo_texto);
+    box-shadow: var(--sombra);
     margin:2% 0% 0% 0%;
 }
 
@@ -174,8 +247,8 @@ body{
     align-items: center;
     text-align: center;
     border-radius: 5%;
-    background-color: white;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+    background-color:var(--color_fondo_texto);
+    box-shadow: var(--sombra);
     margin:2% 0% 0% 0%;
 }
 
@@ -184,9 +257,9 @@ body{
     margin:2%;
     padding: 5% 5% 50% 5%;
     resize: none;
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
     font-size: 1.5rem;
-    color:#495057;
+    color:var(--color_texto);
     background-color: transparent;
     border: none;
     outline: none;
@@ -194,16 +267,17 @@ body{
 }
 
 .main_entrada_texto::placeholder{
-    color:#495057;
+    color:var(--color_texto);
 }
 
 .main_salida_texto{
     margin:2%;
     padding: 5% 5% 50% 5%;
     resize: none;
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
     font-size: 1.5rem;
-    color:#495057;
+    color:var(--color_texto);
+    background-color: transparent;
     border: none;
     outline: none;
     flex-grow: 1;
@@ -231,44 +305,44 @@ body{
 }
 
 .main_salida_texto_principal{
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
     font-size: 1.5rem;
     font-weight: 800;
     color: #343A40;
-    text-align: justify;
+    text-align: center;
 }
 
 .main_salida_texto_secundario{
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
     font-size: 1rem;
     margin: 3% 0% 0% 0%;
     color: #343A40;
-    text-align: justify;
+    text-align: center;
 }
 
 .main_salida_texto_principal_explicacion{
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
     font-size: 1.5rem;
     font-weight: 800;
-    color: #ffffff;
+    color: var(--color_letras_claras);
     text-align: justify;
 }
 
 .main_salida_texto_secundario_explicacion{
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
     font-size: 1rem;
     margin: 3% 0% 0% 0%;
-    color: #ffffff;
+    color:var(--color_letras_claras);
     text-align: justify;
 }
 
 
 
 .main_tentrada_advertencia{
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
     font-size: 0.75rem;
-    color:#495057;
-    margin:2% 0% 0% 7%;
+    color:var(--color_texto);
+    margin:2% 0% 0% 3%;
 }
 .main_entrada_botones{
     display: flex;
@@ -276,25 +350,25 @@ body{
     gap: 0.3rem;
     box-sizing: border-box;
     flex-wrap: wrap;
-    margin:3%;
+    margin:0% 3% 3% 3%;
 }
 
 .main_entrada_boton_encriptar{
     flex: 1;
     padding: 2%;
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
     border-radius: 15px;
     border: none;
     cursor: pointer;
     background-color: #0A3871;
-    color:white;
+    color:var(--color_letras_claras);
     font-size: 1rem;
 }
 
 .main_entrada_boton_desencriptar{
     flex: 1;
     padding: 2%;
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
     border-radius: 15px;
     border: none;
     cursor: pointer;
@@ -306,7 +380,7 @@ body{
 .main_entrada_boton_refresh{
     flex: 1;
     padding: 2%;
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
     border-radius: 15px;
     border: none;
     cursor: pointer;
@@ -337,7 +411,7 @@ body{
     width: 85%;
     padding: 2%;
     bottom: 0;
-    font-family: "Inter", sans-serif;
+    font-family: var(--letra);
     border-radius: 15px;
     border: none;
     cursor: pointer;
@@ -351,13 +425,65 @@ body{
     transform: scale(1.05);
 }
 
+.mensaje_portapapeles {
+    position: fixed;
+    bottom: 0;
+    background-color: #4cacaf;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    opacity: 1;
+    font-family: var(--letra);
+}
+
+@keyframes subirYdesaparecer {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+.footer{
+    position:fixed;
+    bottom:0;
+    right:0;
+    width: 100%;
+    color:var(--color_letras_claras);
+    font-family: var(--letra);
+    font-size:0.8rem;
+    text-align: center;
+    background-color: #0A3871;
+    margin:1% 0% 0% 0%;
+    padding:0.5% 0% 0.5% 0%;
+}
+
+.footer i{
+    font-size: 1.3rem;
+    padding: 0.2% 0%;
+    margin:0%  0.1%;
+}
+
+.footer i:hover{
+    transform: scale(1.15);
+}
+
+.footer_negrita{
+    font-weight:600;
+}
+
+
 /*Responsibidad*/
 @media(max-width:900px){
 
     .header_titulo{
 
-        color:white;
-        font-family: "Inter", sans-serif;
+        color:var(--color_letras_claras);
+        font-family: var(--letra);
         text-align: center;
         padding:0.5%;
         font-size: 1.75rem;
@@ -382,8 +508,8 @@ body{
         width: 90%;
         gap:1rem;
         border-radius: 15px;
-        background-color: white;
-        box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+        background-color: var(--color_fondo_texto);
+        box-shadow: var(--sombra);
     }
     
     .main_salida_sin_texto{
@@ -394,8 +520,8 @@ body{
         width: 90%;
         gap:1rem;
         border-radius: 15px;
-        background-color: white;
-        box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+        background-color: var(--color_fondo_texto);
+        box-shadow: var(--sombra);
     }
     
     
@@ -407,8 +533,8 @@ body{
         align-items: center;
         text-align: center;
         border-radius: 15px;
-        background-color: white;
-        box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+        background-color: var(--color_fondo_texto);
+        box-shadow: var(--sombra);
     }
 
     .main_salida_sin_texto_imagen{
@@ -424,9 +550,9 @@ body{
         margin:2%;
         padding: 5% 5% 35% 5%;
         resize: none;
-        font-family: "Inter", sans-serif;
+        font-family: var(--letra);
         font-size: 1.5rem;
-        color:#0A3871;
+        color:var(--color_texto);
         background-color: transparent;
         border: none;
         outline: none;
@@ -436,9 +562,9 @@ body{
         margin:2%;
         padding: 5% 5% 20% 5%;
         resize: none;
-        font-family: "Inter", sans-serif;
+        font-family: var(--letra);
         font-size: 1.5rem;
-        color:#495057;
+        color:var(--color_texto);
         border: none;
         outline: none;
     }

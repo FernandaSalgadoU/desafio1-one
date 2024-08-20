@@ -5,10 +5,8 @@ let ventana_emergente_mensaje="";
 
 function condicion_Inicial(){
     palabra_Usuario=document.getElementById('main_entrada_texto').value;
-   /* palabra_Usuario = palabra_Usuario.toLowerCase();
-    palabra_Usuario=quitar_Tildes(palabra_Usuario);
-    palabra_Usuario=eliminarCaracteresEspeciales(palabra_Usuario);*/
 }
+
 
 function boton_Encriptar(){
     condicion_Inicial();
@@ -97,19 +95,29 @@ function boton_Desencriptar(){
     }
 }
 
+function boton_Copiar() {
+    var palabra_Copiada = document.getElementById('main_salida_texto').value;
+    navigator.clipboard.writeText(palabra_Copiada).then(() => {
+        mostrarMensaje("El mensaje fue copiado con éxito");
+        document.getElementById('main_entrada_texto').value = palabra_Copiada;
+        document.getElementById('main_salida_texto').value = "";
+        document.getElementById('main_salida').style.display = 'none';
+        document.getElementById('main_salida_sin_texto').style.display = 'none';
+        document.getElementById('main_salida_copia').style.display = 'flex';
 
-function boton_Copiar(){
-    palabra_Copiada=document.getElementById('main_salida_texto').value;
+    }).catch(err => {
+        mostrarMensaje("No fue posible copiar el mensaje en el portapapeles",err);
+    });
+}
 
-    if(palabra_Copiada.trim()===""){
-        return;
-    }
+function mostrarMensaje(mensaje) {
+    const elementoMensaje = document.getElementById('mensaje_portapapeles');
+    elementoMensaje.textContent = mensaje;
+    elementoMensaje.style.display = 'block';
 
-    document.getElementById('main_entrada_texto').value=palabra_Copiada;
-    document.getElementById('main_salida_texto').value="";
-    document.getElementById('main_salida').style.display='none';
-    document.getElementById('main_salida_sin_texto').style.display='none';
-    document.getElementById('main_salida_copia').style.display='flex';
+    elementoMensaje.style.animation = 'none'; 
+    elementoMensaje.offsetHeight;
+    elementoMensaje.style.animation = 'subirYdesaparecer 3s ease-in-out forwards';
 }
 
 function boton_Resetear(){
@@ -119,16 +127,6 @@ function boton_Resetear(){
     document.getElementById('main_salida_sin_texto').style.display='flex';
     document.getElementById('main_salida_copia').style.display='none';
 }
-
-
-/*function quitar_Tildes(texto) {
-    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
-}
-
-function eliminarCaracteresEspeciales(texto) {
-    const regex = /[^a-zA-Z0-9]/g;
-    return texto.replace(regex, '');
-  }*/
 
 function verificar_Minusculas(texto){
     if( texto=== texto.toLowerCase()){
@@ -162,3 +160,48 @@ function desencriptar_Texto(texto){
     texto = texto.replace(/enter/gi, "e").replace(/imes/gi, "i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u");
     return texto;
 }
+
+function abrirEnNuevaPestaña(link) {
+    window.open(link, '_blank');
+}
+
+const githubButton = document.getElementById("icon_Github");
+githubButton.addEventListener('click', () => {
+     abrirEnNuevaPestaña('https://github.com/FernandaSalgadoU');
+});
+
+const linkedinButton = document.getElementById("icon_LinkedIn");
+linkedinButton.addEventListener('click', () => {
+    abrirEnNuevaPestaña('https://www.linkedin.com/in/fernanda-salgado-ulloa');
+});
+
+const githubButton_f = document.getElementById("icon_Github_footer");
+githubButton_f.addEventListener('click', () => {
+     abrirEnNuevaPestaña('https://github.com/FernandaSalgadoU');
+});
+
+const linkedinButton_f = document.getElementById("icon_LinkedIn_footer");
+linkedinButton_f.addEventListener('click', () => {
+    abrirEnNuevaPestaña('https://www.linkedin.com/in/fernanda-salgado-ulloa');
+});
+
+
+
+const typed=new Typed('.typed',{
+    //strings:[
+       // '<i class="texto_titulo">Encriptado</i>', 
+       // '<i class="texto_titulo">Desencriptado</i>'
+    //],
+    stringsElement:'#cadenas-texto',
+	typeSpeed: 75,
+	startDelay: 300, 
+	backSpeed: 75, 
+    smartBackspace:true,
+	backDelay: 1500,
+	loop: true, 
+	loopCount: false,
+	showCursor: false,
+	cursorChar: '', 
+	contentType: 'html',
+
+})

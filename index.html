@@ -9,13 +9,23 @@
     <link rel="icon" href="Assets/Titulo.png">
 </head>
 <body>
+    <div id="particles-js"></div>
     <header class="header">
         <div class="container">
             <div class="btn-menu">
                 <label for="btn-menu">☰</label>
             </div>
         </div>
-        <h1 class="header_titulo">Encriptado y desencriptado de texto</h1>
+        <!--<h1 class="header_titulo"><span class="typed"></span> de texto</h1>-->
+
+        <h1 class="header_titulo">
+            <span id="cadenas-texto" style="display: none;">
+                <i class="texto_titulo">Encriptador</i>
+                <i class="texto_titulo">Desencriptador</i>
+            </span>
+            <span class="typed"></span> de texto
+        </h1>
+        
     </header>
 
     <input type="checkbox" id="btn-menu">
@@ -27,8 +37,14 @@
             </nav>
 
             <section class="container-menu_links">
-                <a class="container-menu_links_contacto"  href="https://github.com/FernandaSalgadoU" target="_blank"><i id="icon" class="fa-brands fa-github" style="color: #c7c7c7;"></i></a>
-                <a class="container-menu_links_contacto"  href="https://www.linkedin.com/in/fernanda-salgado-ulloa" target="_blank"><i id="icon" class="fa-brands fa-linkedin" style="color: #c7c7c7;"></i></a>
+                <a class="tooltip-link" data-tooltip="Github">
+                    <i id="icon_Github" class="fa-brands fa-github"></i>
+                </a>
+
+                <a class="tooltip-link" data-tooltip="LinkedIn">
+                    <i id="icon_LinkedIn" class="fa-brands fa-linkedin"></i>
+                </a>
+
             </section>
 
             <label for="btn-menu">✖️</label>
@@ -48,15 +64,21 @@
             </section>
         </section>
 
+        <p class="mensaje_portapapeles" id="mensaje_portapapeles"></p>
+        
         <section class="main_salida" id="main_salida">
             <textarea id="main_salida_texto" class="main_salida_texto" readonly type="text" spellcheck="false" ></textarea>
+            
             <section class="main_salida_botones">
-                <button class="main_salida_boton_copiar" onclick=boton_Copiar()>Copiar</button>
+                <button class="main_salida_boton_copiar" id="main_salida_boton_copiar" onclick="boton_Copiar()">
+                    <i class="fa-solid fa-copy"></i>
+                    Copiar
+                </button>
             </section>
         </section>
 
         <section class="main_salida_sin_texto" id="main_salida_sin_texto">
-            <img class="main_salida_sin_texto_imagen" src="Assets/No_encontrado.jpg">
+            <img class="main_salida_sin_texto_imagen" src="Assets/No_encontrado.svg">
             <section class="main_salida_sin_texto_mensaje">
                 <p1 class="main_salida_texto_principal">Ningún mensaje fue encontrado</p1>
                 <p class="main_salida_texto_secundario">Ingresa el texto que desees encriptar o desencriptar</p>
@@ -64,7 +86,7 @@
         </section>
 
         <section class="main_salida_copia" id="main_salida_copia">
-            <img class="main_salida_copia_imagen" src="Assets/Logrado.avif">
+            <img class="main_salida_copia_imagen" src="Assets/Logrado.svg">
             <section class="main_salida_copia_mensaje">
                 <p1 class="main_salida_texto_principal">Mensaje copiado con éxito</p1>
             </section>
@@ -74,8 +96,25 @@
 
     </main>
     <footer class="footer">
+        <span class="footer_negrita">Proyecto creado por:</span> Fernanda Salgado U. (2024).
+
+        <section class="footer-menu_links">
+            <a class="tooltip">
+                <i id="icon_Github_footer" class="fa-brands fa-github"></i>
+            </a>
+
+            <a class="tooltip">
+                <i id="icon_LinkedIn_footer" class="fa-brands fa-linkedin"></i>
+            </a>
+
+        </section>
     </footer>
 </body>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script src="app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="particles.min.js"></script>
+<script src="Particulas.js"></script>
+
 </html>

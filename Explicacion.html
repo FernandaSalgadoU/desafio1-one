@@ -9,13 +9,24 @@
     <link rel="icon" href="Assets/Titulo.png">
 </head>
 <body>
+    <div id="particles-js"></div>
     <header class="header">
         <div class="container">
             <div class="btn-menu">
                 <label for="btn-menu">☰</label>
             </div>
         </div>
-        <h1 class="header_titulo">Encriptado y desencriptado de texto</h1>
+        
+        <!--<h1 class="header_titulo"><span class="typed"></span> de texto</h1>-->
+        
+        <h1 class="header_titulo">
+            <span id="cadenas-texto" style="display: none;">
+                <i class="texto_titulo">Encriptador</i>
+                <i class="texto_titulo">Desencriptador</i>
+            </span>
+            <span class="typed"></span> de texto
+        </h1>
+
     </header>
 
     <input type="checkbox" id="btn-menu">
@@ -27,8 +38,16 @@
             </nav>
 
             <section class="container-menu_links">
-                <a class="container-menu_links_contacto" href="https://github.com/FernandaSalgadoU" target="_blank"><i id="icon" class="fa-brands fa-github" style="color: #c7c7c7;"></i></a>
-                <a class="container-menu_links_contacto" href="https://www.linkedin.com/in/fernanda-salgado-ulloa" target="_blank"><i id="icon" class="fa-brands fa-linkedin" style="color: #c7c7c7;"></i></a>
+                <a class="tooltip-link" data-tooltip="Github">
+                    <div class="triangulo"></div>
+                    <i id="icon_Github" class="fa-brands fa-github"></i>
+                </a>
+
+                <a class="tooltip-link" data-tooltip="LinkedIn">
+                    <div class="triangulo"></div>
+                    <i id="icon_LinkedIn" class="fa-brands fa-linkedin"></i>
+                </a>
+
             </section>
 
             <label for="btn-menu">✖️</label>
@@ -43,9 +62,9 @@
                 El desafío consiste en realizar un encriptado y desencriptado de texto considerando las siguientes condiciones:
                 <br><br>
                 a) El texto ingresado no debe tener mayúsculas, acentos ni carácteres especiales.
-                <br> <br> 
+                <br>
                 b) Las "llaves" de encriptación utilizadas son las siguientes:
-                <br> <br> 
+                <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- La letra "e" es convertida para "enter"
                 <br> 
                 &nbsp;&nbsp;&nbsp;&nbsp;- La letra "i" es convertida para "imes"
@@ -55,11 +74,11 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;- La letra "o" es convertida para "ober"
                 <br> 
                 &nbsp;&nbsp;&nbsp;&nbsp;- La letra "u" es convertida para "ufat"
-                <br> <br> 
+                <br>
                 c) Se debe tener la posibilidad de volver al estado original de la palabra.
-                <br> <br> 
+                <br>
                 d) El usuario debe poder encriptar o desencriptar un texto.
-                <br> <br> 
+                <br>
                 e) El resultado debe mostrarse en pantalla.
                 
                 <br> <br>
@@ -69,14 +88,33 @@
             <p class="main_salida_texto_secundario_explicacion">
                 Es importante mencionar que este proyecto fue desarrollado
                 gracias al conocimiento entregado por el programa ONE de Alura y Oracle. Además de la utilización
-                de distintos recursos encontrados en la web (como por ejemplo: el canal de youtube SLee Dw y Hilari Web).
+                de distintos recursos encontrados en la web (como por ejemplo: el canal de youtube SLee Dw, Hilari Web, Eureka Tutoriales).
                 De todas maneras, si requieren explicación de alguna parte del desarrollo, no tengo problemas con
                 compartir mi conocimiento. Eso sí, aún estoy iniciando en este proceso del desarrollo web.
                 <br> <br> 
             </p>
         </section>
     </main>
+    <footer class="footer">
+        <span class="footer_negrita">Proyecto creado por:</span> Fernanda Salgado U. (2024).
 
+        <section class="footer-menu_links">
+            <a class="tooltip">
+                <i id="icon_Github_footer" class="fa-brands fa-github"></i>
+            </a>
+
+            <a class="tooltip">
+                <i id="icon_LinkedIn_footer" class="fa-brands fa-linkedin"></i>
+            </a>
+
+        </section>
+    </footer>
+    
 </body>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script src="app.js"></script>
+<script src="particles.min.js"></script>
+<script src="Particulas.js"></script>
+
 </html>
