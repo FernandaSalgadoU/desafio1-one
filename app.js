@@ -138,7 +138,7 @@ function verificar_Minusculas(texto){
 }
 
 function verificar_Tilde(texto) {
-    if (/[áéíóúÁÉÍÓÚ]/.test(texto)) {
+    if (/[àáâäãåèéêëìíîïòóôöõùúûüñçÀÁÂÄÃÅÈÉÊËÌÍÎÏÒÓÔÖÕÙÚÛÜÑÇ]/g.test(texto)) {
       return true; 
     } 
     else {
@@ -147,7 +147,7 @@ function verificar_Tilde(texto) {
   }
 
   function contieneCaracteresEspeciales(texto) {
-    const regex = /[!@#$%^&*(),.?":{}|<>]/;
+    const regex = /[^a-zA-Z0-9\s]/g;
     return regex.test(texto);
 }
 
