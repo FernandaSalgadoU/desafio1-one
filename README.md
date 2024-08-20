@@ -3,7 +3,7 @@
 
 El código presentado a continuación forma parte del desafío 1 del programa ONE de Alura y Oracle, el cual consiste en un encriptador y desencriptador de texto.
 
-![Static Badge](https://img.shields.io/badge/%C3%9Altima_actualizaci%C3%B3n-10_Agosto_2024-FF0066?style=flat)
+![Static Badge](https://img.shields.io/badge/%C3%9Altima_actualizaci%C3%B3n-19_Agosto_2024-FF0066?style=flat)
 
 ## Características
 
